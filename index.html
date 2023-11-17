@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airoplane game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="game-container">
+            <div class="labels d-block">
+               <span>Score</span>
+               <span id="g-score">0</span>
+            </div>
+            <div class="game d-block">
+                <div class="al-container">
+                </div>
+                <img src="aircraft.png" alt="" id="plane">
+            </div>
+            <div class="plane-controll-container d-block">
+                <input type="range" name="p-c-val" id="p-c-val" min="0" max="240">
+            </div>
+             <div class="end-display">
+                <h2>Congragulations</h2>
+                <div>
+                    <span>Your Score: <span id="g-score-end"></span></span>
+                    <button onclick="location.reload()">Play Again</button>
+                </div>
+             </div>
+        </div>
+    </div>
+    <script src="script.js">
+    </script>
+</body>
+</html>
