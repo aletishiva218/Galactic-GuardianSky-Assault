@@ -141,3 +141,6 @@ body{
 .game-container .d-none{
     display: none;
 }
+.game-container #gunshot{
+display: none;
+}

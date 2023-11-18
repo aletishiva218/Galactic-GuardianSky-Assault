@@ -10,7 +10,7 @@ let alienAppend = () =>{
     setTimeout(alienAppend,1200)
 }
 setTimeout(alienAppend,1200)
-let bulletAppendMaxTimes = 4;
+let bulletAppendMaxTimes = 10;
 let bulletAppend = () =>{
     let bullet_container = document.querySelector(".game-container .game")
     let bullet = document.createElement("img")
@@ -19,7 +19,7 @@ let bulletAppend = () =>{
     bullet_container.appendChild(bullet)
     bulletAppendMaxTimes--;
     if(bulletAppendMaxTimes > 0)
-    setTimeout(bulletAppend,500)
+    setTimeout(bulletAppend,200)
 }
 bulletAppend()
 
@@ -36,6 +36,7 @@ let planeMovement = () => {
 }
 setInterval(planeMovement,0)
 let score = document.querySelector(".game-container .labels #g-score");
+let gunshot = document.getElementById("gunshot")
 let attacked = () => {
     let bullets = document.querySelectorAll(".game-container .game .bullet");
     let aliens = document.querySelectorAll(".game-container .game .al-container img");
@@ -48,6 +49,7 @@ let attacked = () => {
             let aliegnX = Number.parseInt( window.getComputedStyle(alien,null).getPropertyValue('left'));
            if(Math.abs(aliegnY - bulletY) < 5 && (Math.abs(aliegnX - bulletX) < 30))
            {
+            gunshot.play()
             aliens[index].style.display = "none";
             score.innerHTML = Number.parseInt(score.innerHTML) + 1;
            }
@@ -71,7 +73,3 @@ let attacked = () => {
 }
 setInterval(attacked,0)
 }
-
-
-
-
